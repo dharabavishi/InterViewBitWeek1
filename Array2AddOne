@@ -1,0 +1,39 @@
+@implementation Solution
+	-(NSMutableArray *) plusOne:(NSMutableArray *) A  {
+	
+	    
+	    for(int m=A.count-1;m>=0;m--){
+	    
+	        int temp = [[A objectAtIndex:m]intValue];
+	        int newNo = temp+1;
+	        if(newNo<=9){
+	            
+	            
+	            [A replaceObjectAtIndex:m withObject:[NSString stringWithFormat:@"%d",newNo]];
+	           
+	            break;
+	        }else{
+	        
+	        
+	            [A replaceObjectAtIndex:m withObject:@"0"];
+	            if(m==0){
+	            
+	                [A insertObject:@"1" atIndex:0];
+	            }
+	            
+	        }
+	    
+	    
+	    }
+	    
+	    while([[A objectAtIndex:0]intValue] == 0){
+	    
+	        [A removeObjectAtIndex:0];
+	    }
+	    
+	    
+	    
+	    return A;
+	}
+	
+@end

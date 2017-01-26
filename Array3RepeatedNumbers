@@ -1,0 +1,19 @@
+@implementation Solution
+	-(NSInteger) repeatedNumber:(NSArray *) A  {
+	
+	    NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
+	    for(int i=0;i<A.count;i++){
+	        
+	        if([dict valueForKey:[NSString stringWithFormat:@"%@",[A objectAtIndex:i]]]){
+	        
+	            return [[A objectAtIndex:i]intValue];
+	        }else{
+	        
+	            [dict setObject:@"1" forKey:[NSString stringWithFormat:@"%@",[A objectAtIndex:i]]];
+	        
+	        }
+	    
+	    }
+	    return -1;
+	}
+@end
